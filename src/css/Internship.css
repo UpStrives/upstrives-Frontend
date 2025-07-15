@@ -1,0 +1,131 @@
+/* Animate heading wave */
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(15deg); }
+  30% { transform: rotate(-10deg); }
+  45% { transform: rotate(15deg); }
+  60% { transform: rotate(-10deg); }
+  75% { transform: rotate(15deg); }
+  100% { transform: rotate(0deg); }
+}
+.wave {
+  display: inline-block;
+  animation: wave 2.5s infinite;
+  transform-origin: 70% 70%;
+}
+
+/* Text animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-heading {
+  animation: fadeInUp 1s ease forwards;
+}
+.animate-text {
+  animation: fadeInUp 1.3s ease forwards;
+  animation-delay: 0.5s;
+}
+
+/* Internship Cards hover */
+.internship-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgb(134 54 168 / 0.3);
+  transition: all 0.3s ease;
+}
+
+/* Duration pills hover transition included inline */
+
+/* How It Works */
+.how-it-works {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.how-card {
+  max-width: 250px;
+  box-shadow: 0 2px 10px rgb(134 54 168 / 0.15);
+  transition: transform 0.3s ease;
+}
+
+.how-card:hover {
+  transform: scale(1.05);
+}
+
+/* Arrows */
+.arrow {
+  font-size: 3rem;
+  color: #8636a8;
+  user-select: none;
+  animation: arrow-pulse 2s infinite;
+}
+
+@keyframes arrow-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Featured Program Cards Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.featured-card {
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Certificate Logos */
+.certificate-container {
+  padding: 40px 0;
+}
+
+.certificate-logos {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  animation: slideLeftRight 8s linear infinite;
+}
+
+@keyframes slideLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+  .how-it-works {
+    flex-direction: column;
+  }
+  .arrow {
+    font-size: 2rem;
+    margin: 1rem 0;
+  }
+  .how-card {
+    max-width: 100%;
+  }
+}

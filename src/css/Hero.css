@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* HERO SECTION */
+.hero-section {
+  min-height: 100vh;
+  width: 100%;
+  background: #8636a8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  margin-top: -70px;
+}
+
+.banner {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1s ease forwards;
+}
+
+.slogan {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1.2s ease forwards;
+  color: #d1d1d1;
+}
+
+.btn-cta {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  background-color: #6a0dad;
+  border: none;
+  color: white;
+  border-radius: 30px;
+  transition: 0.3s ease;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.btn-cta:hover {
+  background-color: #8b3dff;
+  transform: scale(1.05);
+}
+
+/* WAVES */
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  background-repeat: repeat-x;
+  background-size: cover;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.wave1 {
+  background-image: url('/images/wave1.svg');
+  animation: waveAnim 10s linear infinite;
+}
+
+.wave2 {
+  background-image: url('/images/wave2.svg');
+  animation: waveAnim 15s linear infinite reverse;
+  bottom: 10px;
+}
+
+.wave3 {
+  background-image: url('/images/wave3.svg');
+  animation: waveAnim 20s linear infinite;
+  bottom: 20px;
+}
+
+/* SERVICES */
+.services-wrapper {
+  position: relative;
+  top: -60px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+  z-index: 10;
+  padding: 0 1rem;
+}
+
+.services-wrapper.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.services-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+}
+
+/* FEATURED */
+.featured-card {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeUp 0.6s ease forwards;
+  transition: transform 0.3s ease-in-out;
+}
+
+.featured-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ANIMATIONS */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes waveAnim {
+  0% { background-position-x: 0; }
+  100% { background-position-x: 1000px; }
+}
+
+/* SLIDE EFFECTS */
+.slide-in-left {
+  animation-name: slideInLeft;
+}
+.slide-in-right {
+  animation-name: slideInRight;
+}
+
+@keyframes slideInLeft {
+  0% { transform: translateX(-80px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  0% { transform: translateX(80px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* CALL TO ACTION BUTTONS */
+.btn-outline-primary:hover {
+  background-color: #1E40AF;
+  color: #fff;
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+.cta-button {
+  transition: all 0.3s ease-in-out;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+}
+
+/* CORE OFFERINGS */
+.core-offering-card {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.core-offering-card:hover {
+  background-color: #f3f4f6;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.core-offering-card .hover-text {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  font-size: 0.9rem;
+  color: #4b0082;
+  margin-top: 0.5rem;
+}
+
+.core-offering-card:hover .hover-text {
+  opacity: 1;
+  max-height: 100px;
+}
+
+/* TESTIMONIAL MARQUEE */
+.testimonial-marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.testimonial-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+  gap: 2rem;
+}
+
+.testimonial-card-horizontal {
+  flex: 0 0 auto;
+  width: 300px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.testimonial-card-horizontal:hover {
+  transform: scale(1.05);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* SECTION HEADINGS */
+section h2 {
+  letter-spacing: -0.5px;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 1024px) {
+  .banner {
+    font-size: 2.5rem;
+  }
+
+  .slogan {
+    font-size: 1.25rem;
+  }
+
+  .services-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    font-size: 2rem;
+  }
+
+  .slogan {
+    font-size: 1.1rem;
+  }
+
+  .btn-cta {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+  }
+
+  .testimonial-card-horizontal {
+    width: 250px;
+  }
+
+  .cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    font-size: 1.6rem;
+  }
+
+  .slogan {
+    font-size: 1rem;
+  }
+
+  .btn-cta,
+  .cta-button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .services-card {
+    padding: 1.5rem;
+  }
+
+  .testimonial-card-horizontal {
+    width: 220px;
+  }
+}

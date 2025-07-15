@@ -1,0 +1,36 @@
+.oauth-buttons .btn {
+  width: 100%;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.oauth-btn.google {
+  background-color: #ffffff;
+  color: #444;
+  border: 1px solid #d1d5db;
+}
+
+.oauth-btn.google:hover {
+  background-color: #f1f1f1;
+}
+
+.oauth-btn.github {
+  background-color: #24292f;
+  color: #ffffff;
+  border: none;
+}
+
+.oauth-btn.github:hover {
+  background-color: #1b1f23;
+}
+
+.separator span {
+  font-weight: 500;
+  font-size: 0.85rem;
+}
